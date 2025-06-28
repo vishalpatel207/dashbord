@@ -20,6 +20,7 @@ export default function DashboardLayout({
           <main className="flex-1 p-8 bg-transparent">{children}</main>
           <Footer />
         </div>
+        
       </div>
     </div>
   );
