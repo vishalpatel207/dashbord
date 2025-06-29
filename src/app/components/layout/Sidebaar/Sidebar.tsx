@@ -9,7 +9,7 @@ import {
   ProfileIcon,
   SignInIcon,
   SignUpIcon,
-} from './icons';
+} from '../icons';
 
 type NavLink = {
   name: string;

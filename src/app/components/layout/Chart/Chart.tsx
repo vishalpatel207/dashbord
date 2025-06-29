@@ -25,7 +25,7 @@ const data = [
   { name: "Dec", uv: 450, pv: 160 },
 ];
 
-export default function DashAreaChart() {
+export default function Chart() {
   return (
     <div className="p-6 rounded-2xl shadow-lg text-white bg-[linear-gradient(126.97deg,_rgba(6,11,40,0.74)_28.26%,_rgba(10,14,35,0.71)_91.2%)]">
       <h2 className="text-lg font-semibold">Sales overview</h2>

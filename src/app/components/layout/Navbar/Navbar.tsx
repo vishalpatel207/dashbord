@@ -1,13 +1,34 @@
+"use client";
+
 import React from "react";
+import { usePathname } from "next/navigation";
+
+const formatPageName = (path: string) => {
+  if (path === "/") return "Home";
+  // Split path by `/` and get last segment for simple page name
+  const segments = path.split("/").filter(Boolean);
+  // Convert kebab-case or snake_case to Capitalized words
+  return segments
+    .map((segment) =>
+      segment
+        .split(/[-_]/)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
+    )
+    .join(" / ");
+};
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const pageName = pathname ? formatPageName(pathname) : "";
+
   return (
-    <div className="flex items-center justify-between px-8  bg-transparent">
+    <div className="flex items-center justify-between px-8 bg-transparent">
       <div>
         <div className="text-xs text-gray-400 mb-1">
-          Pages <span className="text-white"> / Dashboard</span>
+          Pages <span className="text-white"> / {pageName}</span>
         </div>
-        <div className="text-sm font-bold text-white">Dashboard</div>
+        <div className="text-sm font-bold text-white">{pageName}</div>
       </div>
 
       <div className="flex items-center space-x-4">
@@ -15,7 +36,7 @@ export default function Navbar() {
           <img
             src="/search.svg"
             alt="Search"
-            className="absolute left-3.5 top-3  "
+            className="absolute left-3.5 top-3"
           />
           <input
             type="text"
@@ -34,7 +55,11 @@ export default function Navbar() {
         </div>
 
         <div className="cursor-pointer hover:text-[#1583f7] transition">
-          <img src="/notification.svg" alt="Notifications" className="w-4 h-4" />
+          <img
+            src="/notification.svg"
+            alt="Notifications"
+            className="w-4 h-4"
+          />
         </div>
       </div>
     </div>

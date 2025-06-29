@@ -1,9 +1,9 @@
 import React from "react";
-import Sidebar from "../components/layout/Sidebar";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+import Sidebar from "../components/layout/Sidebaar/Sidebar";
+import Navbar from "../components/layout/Navbar/Navbar";
+import Footer from "../components/layout/Footer/Footer";
 
-export default function DashboardLayout({
+export default function DashbordMain({
   children,
 }: {
   children: React.ReactNode;

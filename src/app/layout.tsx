@@ -1,6 +1,6 @@
 import "./globals.css";
 import React from "react";
-import DashboardLayout from "./layouts/DashboardLayout";
+import DashBordMain from "./layouts/DashbordMain";
 
 export default function RootLayout({
   children,
@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-base-ui bg-cover bg-no-repeat bg-center min-h-screen">
-        <DashboardLayout>{children}</DashboardLayout>
+        <DashBordMain>{children}</DashBordMain>
       </body>
     </html>
   );
